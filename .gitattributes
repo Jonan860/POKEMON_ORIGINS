@@ -1,0 +1,2 @@
+*.yyz filter=lfs diff=lfs merge=lfs -text
+*.ypp filter=lfs diff=lfs merge=lfs -text

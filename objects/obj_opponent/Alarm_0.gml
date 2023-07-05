@@ -1,0 +1,2 @@
+global.phase=PHASES.chooseMove
+
