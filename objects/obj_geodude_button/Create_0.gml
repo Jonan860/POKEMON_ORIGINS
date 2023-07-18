@@ -1,2 +1,2 @@
-pokemon=global.geodude
+pokemon = global.geodude
 

@@ -1,2 +1,2 @@
-global.phase=PHASES.chooseMove
 
+phaseTransitionSetup(PHASES.statusAilment)

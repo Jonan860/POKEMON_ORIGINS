@@ -1,2 +1,2 @@
-phase="switch_pokemon"
+displaysPokemonList = 0
 

@@ -20,31 +20,27 @@ if(persistenceCreatePlacement()) {
 	ds_list_add(pokemonList, global.charmeleon, global.wartortle, global.ivasaur, global.snorlax)
 	withList(pokemonList, function(inst){with(inst) {owner = other.id}})
 	active_pokemon = noone
+	global.charmeleon.alive = 0 //debug
+	global.ivasaur.alive = 0 // debug
+	global.wartortle.alive = 0 //deubg
+	global.snorlax.HP = 100 //debug
 	scr_switching = function() {
 		var alivePokemonList = scr_filter_list(pokemonList, "alive", 1)
-		if(x >= -sprite_width) {
-			if (speed == 0) {
-				move_towards_point(x - 1000, y, 10)
-			} else {
-				alarm[0] = 30
-			}
-		}
 		if (x < -sprite_width and !instance_exists(obj_poke_ball)) {
-			active = 0
-			speed = 0
-			x = xstart; y = ystart;
-			var starterList = ds_list_create()
-			ds_list_add(starterList, global.charmeleon, global.ivasaur, global.wartortle)
-			var aliveStarters = scr_filter_list(starterList, "alive", 1)
-			if(ds_list_size(aliveStarters) > 0) {
-				active_pokemon = scr_choose_from_list(aliveStarters)
-			}
-			if(ds_list_size(alivePokemonList) < 2) {
-				active_pokemon = global.snorlax
-				audio_stop_sound(sound_witcher)
-			}
-			instance_create_depth(500, 500, 0, obj_poke_ball)
+			phaseTransitionSetup(PHASES.pokeball)
 		}
+	}
+}
+
+scr_ai = function() {
+	var starterList = ds_list_create()
+	ds_list_add(starterList, global.charmeleon, global.ivasaur, global.wartortle)
+	var aliveStarters = scr_filter_list(starterList, "alive", 1)
+	if(ds_list_size(aliveStarters) > 0) {
+		active_pokemon = scr_choose_from_list(aliveStarters)
+	} else {
+		active_pokemon = global.snorlax
+		audio_stop_sound(global.background_music)
 	}
 }
 		

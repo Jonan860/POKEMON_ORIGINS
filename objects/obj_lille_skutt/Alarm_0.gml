@@ -1,2 +1,2 @@
-move = 1
+phaseTransitionSetup(PHASES.switchingPokemon)
 

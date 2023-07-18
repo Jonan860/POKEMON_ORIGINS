@@ -1,3 +1,10 @@
-image_angle = 180 * global.turn == TURNS.AMBER
-spd = 9
-event_inherited()
+/// @description Insert description here
+// You can write your code in this editor
+
+
+
+// Inherit the parent event
+event_inherited();
+x = owner.owner.x; y = owner.owner.y
+speed = 0
+

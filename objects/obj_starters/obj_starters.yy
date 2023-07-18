@@ -5,6 +5,7 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -13,8 +14,8 @@
     "path": "folders/Objects/unit/self pokemon.yy",
   },
   "parentObjectId": {
-    "name": "obj_unit",
-    "path": "objects/obj_unit/obj_unit.yy",
+    "name": "obj_pokemon",
+    "path": "objects/obj_pokemon/obj_pokemon.yy",
   },
   "persistent": true,
   "physicsAngularDamping": 0.1,

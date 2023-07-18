@@ -9,13 +9,12 @@ if(global.event_continue) {
 	name = "Wartortle"
 	sound = sound_wartortle
 
-	bubble = createBubble()
-	defenceCurl = createDefenceCurl()
-	ds_list_add(movesList, bubble, defenceCurl)
-
+	bubble = new moveConstructor(MOVES.BUBBLE)
+	defenceCurl = new moveConstructor(MOVES.DEFENCE_CURL)
+	movesSetup(bubble, defenceCurl)
+	
+	defenceCurlSprite = spr_defence_curl
 	scr_ai = function(){
 		global.move = choose(bubble,bubble,bubble,defenceCurl)
-		global.phase = PHASES.waitForAttack
-		alarm[0] = 60
 	}
 }

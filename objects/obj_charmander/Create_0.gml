@@ -16,8 +16,7 @@ if(global.event_continue) {
 	info_bubble = spr_charmander_info
 	button = obj_charmander_button
 
-	ember = createEmber()
-	tailWhip = createTailWhip()
-	ds_list_add(movesList, ember, tailWhip)
-	withList(movesList, function(inst){with(inst) {owner = other.id}})
+	ember = new moveConstructor(MOVES.EMBER)
+	tailWhip = new moveConstructor(MOVES.TAIL_WHIP)
+	movesSetup(ember, tailWhip)	
 }

@@ -12,8 +12,7 @@ if(global.event_continue) {
 	alarm[0] = 60 * room_speed
 	button = obj_mewtwo_button
 	info_bubble = spr_mewtwo_info
-	psyCutter = createPsyCutter()
-	ds_list_add(movesList, psyCutter)
-	withList(movesList, function(inst){with(inst) {owner = other.id}})
+	psyCutter = new moveConstructor(MOVES.PSY_CUTTER)
+	movesSetup(psyCutter)
 }
 

@@ -14,10 +14,9 @@ if(global.event_continue) {
 	alarm[0] = 50 * room_speed	
 	button = obj_bulbasaur_button
 	info_bubble = spr_bulbasaur_info
-	vineWhip = createvineWhip()
-	growl = createGrowl()
-	ds_list_add(movesList, vineWhip, growl)
-	withList(movesList, function(inst){with(inst) {owner = other.id}})
+	vineWhip = new moveConstructor(MOVES.VINE_WHIP)
+	growl = new moveConstructor(MOVES.GROWL)
+	movesSetup(vineWhip, growl)
 }
 
 

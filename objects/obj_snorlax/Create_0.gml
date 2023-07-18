@@ -1,5 +1,5 @@
 event_inherited()
-if(global.event_continue){
+if(global.event_continue) {
 	max_HP = 300;
 	HP = 300;
 	defence_bonus = 0; attack_bonus = 0;
@@ -11,15 +11,12 @@ if(global.event_continue){
 	sleep = 0
 	xstart = x; ystart = y;
 	sound = sound_snorlax
-	max_sleep = 100
-	tackle = createTackle()
-	sleep = createSleep()
-	ds_list_add(movesList, tackle, sleep)
+	tackle = new moveConstructor(MOVES.TACKLE)
+	sleep = new moveConstructor(MOVES.SLEEP)
+	movesSetup(tackle, sleep)
 	
 	scr_ai = function() {
-		global.move = ifElseReturn(HP <= 0.5 * max_HP, choose(tackle, sleep), tackle)
-		global.phase = PHASES.waitForAttack
-		alarm[0] = 60
+		global.move = HP <= 0.5 * max_HP ? choose(tackle, sleep) : tackle
 	}
 }
 

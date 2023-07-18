@@ -4,7 +4,6 @@
   "name": "obj_leer_animator",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -12,7 +11,10 @@
     "name": "attack animator",
     "path": "folders/Objects/attack animator.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_move_animator",
+    "path": "objects/obj_move_animator/obj_move_animator.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

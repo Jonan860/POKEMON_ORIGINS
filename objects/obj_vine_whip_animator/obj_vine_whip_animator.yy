@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_vine_whip_animator",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -13,8 +13,8 @@
     "path": "folders/Objects/attack animator.yy",
   },
   "parentObjectId": {
-    "name": "obj_attack_projectile",
-    "path": "objects/obj_attack_projectile/obj_attack_projectile.yy",
+    "name": "obj_attack_projectile_animator",
+    "path": "objects/obj_attack_projectile_animator/obj_attack_projectile_animator.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

@@ -2,10 +2,7 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_ember_animator",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_unit","path":"objects/obj_unit/obj_unit.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
-  ],
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
@@ -13,8 +10,8 @@
     "path": "folders/Objects/attack animator.yy",
   },
   "parentObjectId": {
-    "name": "obj_attack_projectile",
-    "path": "objects/obj_attack_projectile/obj_attack_projectile.yy",
+    "name": "obj_attack_projectile_animator",
+    "path": "objects/obj_attack_projectile_animator/obj_attack_projectile_animator.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

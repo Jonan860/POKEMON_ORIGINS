@@ -1,4 +1,4 @@
 function swap_turn() {
-	global.turn = !global.turn
-	global.phase = PHASES.choosing
+	global.turn = 1 - global.turn
+	phaseTransitionSetup(PHASES.choosing)
 }

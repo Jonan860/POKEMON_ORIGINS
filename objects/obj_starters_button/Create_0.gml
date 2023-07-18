@@ -1,2 +1,2 @@
-pokemon=noone
+pokemon = noone
 

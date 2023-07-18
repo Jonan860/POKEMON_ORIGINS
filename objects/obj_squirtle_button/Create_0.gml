@@ -1,2 +1,2 @@
-pokemon=global.squirtle
+pokemon = global.squirtle
 

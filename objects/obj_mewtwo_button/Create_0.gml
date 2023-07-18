@@ -1,2 +1,2 @@
-pokemon=global.mewtwo
+pokemon = global.mewtwo
 

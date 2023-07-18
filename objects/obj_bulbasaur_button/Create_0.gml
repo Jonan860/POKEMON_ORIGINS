@@ -1,2 +1,2 @@
-pokemon=global.bulbasaur
+pokemon = global.bulbasaur
 

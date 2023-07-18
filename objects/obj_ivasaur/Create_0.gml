@@ -9,13 +9,11 @@ if(global.event_continue) {
 	name = "Ivasaur"
 	alive = 1
 	sound = sound_ivasaur
-	vineWhip = createvineWhip()
-	growl = createGrowl()
-	ds_list_add(movesList, vineWhip, growl)
+	vineWhip = new moveConstructor(MOVES.VINE_WHIP)
+	growl = new moveConstructor(MOVES.GROWL)
+	movesSetup(vineWhip, growl)
 
 	scr_ai = function() {
 		global.move = choose(vineWhip, vineWhip, vineWhip, growl)
-		global.phase = PHASES.waitForAttack
-		alarm[0] = 60
 	}
 }

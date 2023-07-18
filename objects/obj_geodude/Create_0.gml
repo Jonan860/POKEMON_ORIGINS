@@ -15,11 +15,9 @@
 	info_bubble = spr_geodude_info
 	button = obj_geodude_button
 
-	rockThrow = createRockThrow()
-	leer = createLeer()
-	defenceCurl = createDefenceCurl()
-	ds_list_add(movesList, rockThrow, leer, defenceCurl)
-	withList(movesList, function(inst){with(inst) {owner = other.id}})
-
+	rockThrow = new moveConstructor(MOVES.ROCK_THROW)
+	leer = new moveConstructor(MOVES.LEER)
+	defenceCurl =new  moveConstructor(MOVES.DEFENCE_CURL)
+	movesSetup(rockThrow, leer, defenceCurl)
 	defenceCurlSprite = spr_geodude_defence_curl
 }

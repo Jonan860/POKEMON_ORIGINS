@@ -10,8 +10,8 @@
     "path": "folders/Objects/attack animator.yy",
   },
   "parentObjectId": {
-    "name": "obj_attack_projectile",
-    "path": "objects/obj_attack_projectile/obj_attack_projectile.yy",
+    "name": "obj_attack_projectile_animator",
+    "path": "objects/obj_attack_projectile_animator/obj_attack_projectile_animator.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

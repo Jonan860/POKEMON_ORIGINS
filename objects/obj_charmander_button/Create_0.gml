@@ -1,2 +1,2 @@
-pokemon=global.charmander
+pokemon = global.charmander
 

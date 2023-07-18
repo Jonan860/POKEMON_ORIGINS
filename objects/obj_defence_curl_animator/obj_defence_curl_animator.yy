@@ -12,8 +12,8 @@
     "path": "folders/Objects/attack animator.yy",
   },
   "parentObjectId": {
-    "name": "obj_starters",
-    "path": "objects/obj_starters/obj_starters.yy",
+    "name": "obj_move_animator",
+    "path": "objects/obj_move_animator/obj_move_animator.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -30,10 +30,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_defence_curl",
-    "path": "sprites/spr_defence_curl/spr_defence_curl.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

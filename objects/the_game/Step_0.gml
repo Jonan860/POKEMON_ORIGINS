@@ -1,5 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
 switch (room) {
 	case difficulty : {
 		with(obj_starters) {
@@ -12,62 +10,34 @@ switch (room) {
 			}
 		}
 		
-		if(!audio_is_playing(sound_pikachu_hej_vad_heter_du) and !audio_is_playing(sound_i_want_to_live)){
-				audio_play_sound(sound_i_want_to_live, 0, 0)
+		if(!audio_is_playing(sound_pikachu_hej_vad_heter_du) and !audio_is_playing(sound_i_want_to_live)) {
+				global.background_music = sound_i_want_to_live
+				audio_play_sound(global.background_music, 0, 0)
 		}	
 	} break;
 
 	case game : {
-		scr_game_jukebox()
 		switch (global.turn) {
-			case TURNS.AMBER : {
+			case TURNS.AMBER : 
 				switch (global.phase) {
-					case PHASES.switchingPokemon : {
-						if(x > room_width + sprite_get_width(spr_win_girl) and !instance_exists(obj_poke_ball)) {
-							speed = 0
-							with(obj_starters_button) {
-								instance_destroy()
-							}
-							instance_create_depth(x, y, 0, obj_poke_ball)
-						}
-					}; break;
-
-					case PHASES.choosing : with(global.amber.active_pokemon) {
-						if(HP <= 0 and alive) {
-							scr_death()
-						}
-					}; break;		
-				}
-			}; break;
-	
-			case TURNS.LILLESKUTT : {
-					switch (global.phase) {
-						case PHASES.chooseMove : {
-							with(global.lilleSkutt.active_pokemon) {
-								if(HP <= 0 and alive) {
-									scr_death(); exit;
-								}
-							}
-							active_pokemon.scr_ai();
-						} break;
-						case PHASES.statusAilment : {
-							if(!instance_exists(obj_statusAilment_animator))
-							with(global.lilleSkutt.active_pokemon) {
-								if(sleep > 0) {
-									if(sleep == max_sleep) {
-										audio_pause_sound(sound_red_army)
-									}
-									instance_create(x,y, obj_sleep_animator, {owner : id})
-									audio_play_sound(sound_sleep, 0, 0)
-								}
+					case PHASES.switchingPokemon :
+						with(global.amber) {
+							if(x > room_width + sprite_get_width(spr_win_girl)) {
+								phaseTransitionSetup(PHASES.pokeball)
 							}
 						}; break;
-						case PHASES.switchingPokemon : global.lilleSkutt.scr_switching() ; break;
-						
-					}
-			}; break;
-		}
-	};  break
+					case PHASES.choosing :	break;
+				}; break;
+	
+			case TURNS.LILLESKUTT : 
+				switch (global.phase) {
+					case PHASES.MOVE_ANIMATION : break;
+					case PHASES.statusAilment : break;
+					case PHASES.switchingPokemon : global.lilleSkutt.scr_switching() ; break;	
+				};
+			break;
+		}; break;
+	}; break;
 }
 				
 	

@@ -14,8 +14,8 @@
     "path": "folders/Objects/unit/enemy pokemon.yy",
   },
   "parentObjectId": {
-    "name": "obj_unit",
-    "path": "objects/obj_unit/obj_unit.yy",
+    "name": "obj_pokemon",
+    "path": "objects/obj_pokemon/obj_pokemon.yy",
   },
   "persistent": true,
   "physicsAngularDamping": 0.1,

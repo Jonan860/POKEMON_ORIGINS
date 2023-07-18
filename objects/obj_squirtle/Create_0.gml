@@ -18,8 +18,7 @@ if(global.event_continue) {
 	info_bubble = spr_squirtle_info
 	defenceCurlSprite = spr_defence_curl
 
-	bubble = createBubble()
-	defenceCurl = createDefenceCurl()
-	ds_list_add(movesList, bubble, defenceCurl)
-	withList(movesList, function(){owner = other.id})
+	bubble = new moveConstructor(MOVES.BUBBLE)
+	defenceCurl = new moveConstructor(MOVES.DEFENCE_CURL)
+	movesSetup(bubble, defenceCurl)
 }

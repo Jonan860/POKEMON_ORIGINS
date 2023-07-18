@@ -1,25 +1,16 @@
 
-if(global.turn == TURNS.LILLESKUTT) {
-	with(global.lilleSkutt.active_pokemon) {
-		visible = 1
-		audio_play_sound(sound, 0, 0);
+var trainer = global.turn == TURNS.LILLESKUTT ? global.lilleSkutt : global.amber
+with(trainer.active_pokemon) {
+	visible = 1
+	audio_play_sound(sound, 0, 0);
+	switch(id) {
+		case global.geodude : audio_pause_sound(global.background_music); break;
+		case global.snorlax : global.background_music = sound_red_army; break;
 	}
-	swap_turn()
-	instance_destroy()
-	exit;
-}
-
-if(global.turn == TURNS.AMBER) {
-	audio_play_sound(global.amber.active_pokemon.sound, 0, 0)
-	if(global.amber.active_pokemon == global.geodude) {
-		if(audio_is_playing(sound_red_army)) {
-			audio_pause_sound(sound_red_army)
-		}
-		if(audio_is_playing(sound_witcher)) {
-			audio_pause_sound(sound_witcher)
-		}
+	if(owner = global.amber) {
+		createMoveButtons()
 	}
-	swap_turn()
-	instance_destroy()
-	exit
 }
+swap_turn()
+instance_destroy()
+	

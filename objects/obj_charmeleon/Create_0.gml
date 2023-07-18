@@ -9,13 +9,10 @@ if(global.event_continue) {
 	name = "Charmeleon"
 	sound = sound_charmeleon
 
-	ember = createEmber()
-	tailWhip = createTailWhip()
-	ds_list_add(movesList, ember, tailWhip)
-
+	ember = new moveConstructor(MOVES.EMBER)
+	tailWhip = new moveConstructor(MOVES.TAIL_WHIP)
+	movesSetup(ember, tailWhip)
 	scr_ai = function() {
 		global.move = choose(ember, ember, ember, tailWhip)
-		global.phase = PHASES.waitForAttack
-		alarm[0] = 60
 	}
 }

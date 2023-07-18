@@ -1,15 +1,10 @@
-if(pokemon.alive and global.phase=="amber"){
-	global.active_pokemon=pokemon
-	global.phase="amber_move"
-
-	with(obj_starters_button){
-		instance_destroy();
+if(pokemon.alive and global.phase == PHASES.choosing) {
+	with(global.amber.active_pokemon) {
+		visible = 0
 	}
-
-	with(obj_switch_pokemon_button){
-		phase="switch_pokemon"
+	global.amber.active_pokemon = pokemon
+	with(obj_switch_pokemon_button) {
+		displaysPokemonList = false
 	}
+	phaseTransitionSetup(PHASES.switchingPokemon)
 }
-
-/* */
-/*  */
