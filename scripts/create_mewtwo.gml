@@ -1,0 +1,10 @@
+event_inherited();
+max_HP=100
+HP=100;
+attack=20;
+defence_bonus=0;
+attack_bonus=0;
+active=0;
+type="Psychic";
+damage=1.5;
+name="Mewtwo"
