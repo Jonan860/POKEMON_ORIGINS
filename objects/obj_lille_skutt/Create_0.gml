@@ -20,10 +20,6 @@ if(persistenceCreatePlacement()) {
 	ds_list_add(pokemonList, global.charmeleon, global.wartortle, global.ivasaur, global.snorlax)
 	withList(pokemonList, function(inst){with(inst) {owner = other.id}})
 	active_pokemon = noone
-	global.charmeleon.alive = 0 //debug
-	global.ivasaur.alive = 0 // debug
-	global.wartortle.alive = 0 //deubg
-	global.snorlax.HP = 100 //debug
 	scr_switching = function() {
 		var alivePokemonList = scr_filter_list(pokemonList, "alive", 1)
 		if (x < -sprite_width and !instance_exists(obj_poke_ball)) {

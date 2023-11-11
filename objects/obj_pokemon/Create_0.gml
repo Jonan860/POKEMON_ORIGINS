@@ -1,13 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-
-
-// Inherit the parent event
-
-
-
 alive = 1
+barLength = 200; barX = x - sprite_xoffset; barHeight = 20; barY = y - sprite_yoffset - barHeight - 10 ;
 movesSetup = function() {
 	movesList = ds_list_create()
 	for(var i = 0; i < argument_count; i++){
@@ -22,11 +14,7 @@ scr_death = function() {
 		
 	with(owner) {
 		active_pokemon = noone
-		var team_alive = scr_pokelist_check_alive( pokemonList)
-		if(!team_alive) {
-			gotoRoomWithSetup(id == global.lilleSkutt ? winner : loser)
-			exit;
-		}
+		
 		
 		if(id == global.amber) {
 			with(obj_move_button) {
@@ -35,8 +23,6 @@ scr_death = function() {
 		}
 	}
 }
-
-
 
 sleeping = new ailmentConstructor(AILMENTS.SLEEPING)
 regening = new ailmentConstructor(AILMENTS.REGENING)
@@ -66,6 +52,12 @@ performStatusAilments = function() {
 
 canUseMove = function() {
 	return !sleeping.applied
+}
+
+returnBackgroundGainAfterPokeSound = function() {
+	if(!audio_is_playing(sound) and (audio_sound_get_gain(global.background_music) < 1)) {
+		audio_sound_gain(global.background_music, 1, 0)
+	}
 }
 
 

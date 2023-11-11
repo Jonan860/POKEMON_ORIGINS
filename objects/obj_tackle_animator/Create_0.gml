@@ -1,6 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
-var opponent = owner.getOpponent()
+opponent = owner.getOpponent()
+movementSpeed = 15
 with(owner.owner) {
-	move_towards_point(opponent.x, opponent.y, 10)
+	move_towards_point(other.opponent.x, other.opponent.y, other.movementSpeed)
 }

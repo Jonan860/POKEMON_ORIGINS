@@ -1,10 +1,11 @@
 global.event_continue = 0
 name = ""
+barLength = 0; barX = 0; barHeight = 0; barY = 0;
 if(persistenceCreatePlacement()) {
 event_inherited()
 appear = 0
 image_alpha = 0
-info = 0
+info = 0 
 info_bubble = spr_ember_info
 movesList = ds_list_create()
 	

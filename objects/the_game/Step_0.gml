@@ -17,6 +17,9 @@ switch (room) {
 	} break;
 
 	case game : {
+		with(global.amber.active_pokemon) { returnBackgroundGainAfterPokeSound()}
+		with(global.lilleSkutt.active_pokemon) { returnBackgroundGainAfterPokeSound()}
+		
 		switch (global.turn) {
 			case TURNS.AMBER : 
 				switch (global.phase) {
@@ -39,5 +42,7 @@ switch (room) {
 		}; break;
 	}; break;
 }
+
+
 				
 	

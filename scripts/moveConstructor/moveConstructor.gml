@@ -1,5 +1,3 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function moveConstructor (moveEnum) constructor {
 	name = moveToName(moveEnum)
 	damage = moveToDamage(moveEnum);
@@ -18,10 +16,25 @@ function moveConstructor (moveEnum) constructor {
 			y = ystart
 			speed = 0
 		}
-		effect()
-		with(getOpponent()) {
-			if(HP <= 0 and alive) {
-				scr_death()
+		if(global.phase != PHASES.attackMiss) {
+			effect()
+			with(getOpponent()) {
+				if(HP <= 0 and alive) {
+					scr_death()
+					var team_alive = scr_pokelist_check_alive( owner.pokemonList)
+					if(!team_alive) {
+						if(owner.id == global.lilleSkutt) {
+							with(global.amber) {
+								global.mewEnding = true
+								withList(pokemonList, function(poke) {with(poke) {global.mewEnding = (alive and global.mewEnding)}})
+							}
+							gotoRoomWithSetup(global.mewEnding ? room_mew : winner); exit;
+						}
+						else {
+							gotoRoomWithSetup(loser); exit;
+						}
+					}
+				}
 			}
 		}
 		if(room == game) {
@@ -48,6 +61,7 @@ function moveToName(moveEnum) {
 		case MOVES.TAIL_WHIP : return "tail Whip"
 	}
 }
+
 function moveToDamage(moveEnum) {
 	switch(moveEnum) {
 		case MOVES.BUBBLE : return 20
@@ -63,6 +77,7 @@ function moveToDamage(moveEnum) {
 		case MOVES.LEER : return 0
 	}
 }
+
 function moveToButton(moveEnum) {
 	switch(moveEnum) {
 		case MOVES.EMBER : return obj_ember_button
@@ -78,6 +93,7 @@ function moveToButton(moveEnum) {
 		case MOVES.LEER : return obj_leer_button
 	}
 }
+
 function moveToAnimator(moveEnum) {
 	switch(moveEnum) {
 		case MOVES.EMBER : return obj_ember_animator
@@ -93,6 +109,7 @@ function moveToAnimator(moveEnum) {
 		case MOVES.SLEEP : return obj_sleep_move_animator
 	}
 }
+
 function moveToSound(moveEnum) {
 	switch(moveEnum) {
 		case MOVES.EMBER : return sound_ember
@@ -108,6 +125,7 @@ function moveToSound(moveEnum) {
 		case MOVES.DEFENCE_CURL : return sound_defence_curl
 	}
 }
+
 function moveToElement(moveEnum) {
 	switch(moveEnum) {
 		case MOVES.EMBER : return ELEMENTS.fire
@@ -123,6 +141,7 @@ function moveToElement(moveEnum) {
 		case MOVES.LEER : return ELEMENTS.normal
 	}
 }
+
 function moveToEffect(moveEnum) {
 	switch(moveEnum) {
 		case MOVES.EMBER : return doDamage
@@ -187,13 +206,13 @@ function modifyStat(statString, amount, target) {
 	
 function startRiddle() {	
 	if(global.phase == PHASES.choosing and global.turn == TURNS.AMBER){
-	if (instance_exists(global.amber.active_pokemon)){
-		if(global.amber.active_pokemon.active and global.turn == TURNS.AMBER) {
-			global.phase=PHASES.riddle
-			var riddle=instance_create_depth(room_width/2, room_height/2, 0, obj_text_bar)
+		if (instance_exists(global.amber.active_pokemon)){
+			if(global.amber.active_pokemon.active and global.turn == TURNS.AMBER) {
+				global.phase = PHASES.riddle
+				var riddle = instance_create_depth(room_width/2, room_height/2, 0, obj_text_bar)
+			}
 		}
 	}
-}
 }
 
 function get_defence_bonus(poke) {

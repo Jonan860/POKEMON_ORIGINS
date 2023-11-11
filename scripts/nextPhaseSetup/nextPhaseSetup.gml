@@ -4,13 +4,13 @@ function phaseTransitionSetup(_phase) {
 		case TURNS.AMBER : 
 			switch (global.phase) {
 				case PHASES.choosing :
-				with(global.amber) {
-					if(active_pokemon == noone) {
-						visible = 1;
-						x = xstart; y = ystart;
+					with(global.amber) {
+						if(active_pokemon == noone) {
+							visible = 1;
+							x = xstart; y = ystart;
+						}
 					}
-				}
-				break;
+					break;
 				case PHASES.switchingPokemon : 
 					with(obj_move_button) {
 						instance_destroy()

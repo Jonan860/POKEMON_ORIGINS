@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_ida_button",
-    "path": "sprites/spr_ida_button/spr_ida_button.yy",
+    "name": "spr_elvira_button",
+    "path": "sprites/spr_elvira_button/spr_elvira_button.yy",
   },
   "spriteMaskId": null,
   "visible": true,

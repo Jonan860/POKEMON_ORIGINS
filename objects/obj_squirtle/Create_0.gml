@@ -17,6 +17,7 @@ if(global.event_continue) {
 	button = obj_squirtle_button
 	info_bubble = spr_squirtle_info
 	defenceCurlSprite = spr_defence_curl
+	defenceCurlSpriteMiss = spr_defence_curl_miss
 
 	bubble = new moveConstructor(MOVES.BUBBLE)
 	defenceCurl = new moveConstructor(MOVES.DEFENCE_CURL)

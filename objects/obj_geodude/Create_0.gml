@@ -1,5 +1,5 @@
-	event_inherited()
-	if(global.event_continue) {
+event_inherited()
+if(global.event_continue) {
 	max_HP = 100
 	HP = 100;
 	attack = 20;
@@ -17,7 +17,8 @@
 
 	rockThrow = new moveConstructor(MOVES.ROCK_THROW)
 	leer = new moveConstructor(MOVES.LEER)
-	defenceCurl =new  moveConstructor(MOVES.DEFENCE_CURL)
+	defenceCurl = new  moveConstructor(MOVES.DEFENCE_CURL)
 	movesSetup(rockThrow, leer, defenceCurl)
 	defenceCurlSprite = spr_geodude_defence_curl
+	defenceCurlSpriteMiss = spr_geodude_defence_curl_miss
 }
